@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <test-scenario name="Test Site - TestSiteAccessible">
+        <summary>
+            <info desc="03/28/2025 11:08 AM" name="Time Started"/>
+            <info desc="03/28/2025 11:09 AM" name="Time Ended"/>
+            <info desc="0.19 mins" name="Time Elapsed"/>
+            <info desc="chrome 134.0.6998.177" name="Browser"/>
+        </summary>
+        <test-case name="User is able to Access the test site">
+            <test-step name="Navigate to Test Site app">
+                <report desc="Navigate to https://www.balsamhill.com/" status="Passed" timestamp="03/28/2025 11:08 AM"/>
+            </test-step>
+            <test-step name="Search for 'Christmas Tree' using the search bar">
+                <report desc="[Christmas Tree] Wait for element to display (10)" status="Passed" timestamp="03/28/2025 11:09 AM"/>
+                <report desc="[Christmas Tree] Type &quot;Christmas Tree&quot;" status="Passed" timestamp="03/28/2025 11:09 AM"/>
+            </test-step>
+            <test-step name="Select the third result that appears on the results page">
+                <report desc="InvalidSelectorException : invalid selector: Unable to locate an element with the xpath expression (//span[@aria-label=' $399'])[1]] because of the following error:&#10;SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//span[@aria-label=' $399'])[1]]' is not a valid XPath expression.&#10;  (Session info: chrome=134.0.6998.177)&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html&#10;Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'&#10;System info: host: 'IQET-1330SMW-LX', ip: '192.168.1.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.177, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62119}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 002e94e69d76eebaaebca592bb868f2e&#10;*** Element info: {Using=xpath, value=(//span[@aria-label=' $399'])[1]]}" status="Failed" timestamp="03/28/2025 11:09 AM"/>
+            </test-step>
+        </test-case>
+    </test-scenario>
+</root>

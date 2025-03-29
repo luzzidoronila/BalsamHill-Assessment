@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><html>
+    <head>
+        <title>ACOE Framework Test Report Manager</title>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js">//</script>
+        <script>
+	$( document ).ready(function() {
+
+		function expandContent(element) {
+			element.parent().nextAll(".box, .line").show();
+			element.attr("class","collapse");
+			element.unbind("click");
+			element.text("[-]");
+			element.click(function( event ) {
+				collapseContent($(this));
+			});
+		};
+		
+		function collapseContent(element) {
+			element.parent().nextAll(".box, .line").hide();
+			element.attr("class","expand");
+			element.unbind("click");
+			element.text("[+]");
+			element.click(function( event ) {
+				expandContent($(this));
+			});
+		};
+		
+		$( "span.expand" ).click(function( event ) {
+			expandContent($(this));
+		});
+		
+		$( "span.collapse" ).click(function( event ) {
+			collapseContent($(this));
+		});
+		
+		$( "span.collapse-all" ).click(function( event ) {
+			$( "span.collapse" ).click();
+		});
+		
+		$( "span.expand-all" ).click(function( event ) {
+			$( "span.expand" ).click();
+		});
+		
+		$( "span.collapse" ).click();
+		
+		$( "div.box[id='summary']" ).find("span.expand:first").click();
+		
+	});
+    </script>
+        <style>
+		h1 {
+			font-size: 16pt;
+			margin: 10px 0px 0px 0px;
+		}
+		div.box {
+			font-family:"Calibri";
+			font-size: 9pt;
+			display: block;
+			width: inherit;
+			border: none;
+			margin: 0px 5px 6px 5px;
+			padding-bottom: 0px;
+		}
+		div.line {
+			font-family:"Calibri";
+			font-size: 9pt;
+			display: block;
+			width: inherit;
+			border: solid #aaa 1px;
+			margin: 4px 5px 4px 5px;
+			padding: 0px 3px 0px 3px;
+		}
+		div.header1 {
+			font-family:"Calibri";
+			font-size: 10pt;
+			color: white;
+			background-color: #333;
+			width: inherit;
+			border: solid #aaa 1px;
+			min-height: 19px;
+			padding: 0px 3px 1px 3px;
+			margin: 5px 0px 5px 0px;
+		}
+		div.header2 {
+			font-family:"Calibri";
+			font-size: 10pt;
+			color: black;
+			background-color: #cfcfcf;
+			width: inherit;
+			border: solid #bfbfbf 1px;
+			min-height: 19px;
+			padding: 0px 3px 1px 3px;
+			margin: 5px 0px 5px 0px;
+		}
+		table.metrics {
+			font-family:"Calibri";
+			font-size: 9pt;
+			border: solid gray 1px;
+		}
+		table.metrics td{
+			text-align:center;
+			border: solid #aaa 1px;
+		}
+		span.label {
+			font-family:"Calibri";
+			color: black;
+			font-weight: bold;
+		}
+		span.passed {
+			color: green;
+		}
+		span.failed {
+			color: red;
+		}
+		span.warning {
+			color: orange;
+		}
+		span.norun, span.incomplete {
+			color: grey;
+		}
+		span.info {
+			color: #3377ff;
+		}
+		span.done {
+			color: green;
+		}
+		span.status {
+			color: grey;
+		}
+		span.expand, span.collapse {
+			font-family:"Courier";
+			font-size: 10pt;
+			color: grey;
+			font-weight: bold;
+		}
+		a:link {
+			color: #3377ff;
+		}
+		
+	</style>
+    </head>
+    <body>
+        <center>
+            <table class="metrics">
+                <tr>
+                    <th width="105px">Level</th>
+                    <th width="75px">
+                        <span class="passed">Passed</span>
+                    </th>
+                    <th width="75px">
+                        <span class="failed">Failed</span>
+                    </th>
+                    <th width="75px">
+                        <span class="warning">Warning</span>
+                    </th>
+                    <th width="75px">
+                        <span class="incomplete">Incomplete</span>
+                    </th>
+                    <th width="75px">
+                        <span class="norun">No Run</span>
+                    </th>
+                    <th width="75px">Total</th>
+                </tr>
+                <tr>
+                    <td>Test Scenario</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Test Case</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Test Steps</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </center>
+        <h1>Test Scenario: Test Site - TestSiteAccessible</h1>
+        <div class="box" id="test-summary">
+            <div class="header2">
+                <span class="collapse" href="#">[-]</span>
+                Test Execution Summary
+                <span class="status">
+                     | 
+                    <span class="failed">Failed</span>
+                </span>
+            </div>
+            <div class="line">
+                <span class="label">Time Started</span>
+                 : 03/28/2025 11:08 AM
+            </div>
+            <div class="line">
+                <span class="label">Time Ended</span>
+                 : 03/28/2025 11:09 AM
+            </div>
+            <div class="line">
+                <span class="label">Time Elapsed</span>
+                 : 0.19 mins
+            </div>
+            <div class="line">
+                <span class="label">Browser</span>
+                 : chrome 134.0.6998.177
+            </div>
+        </div>
+        <div class="box" id="test-case">
+            <div class="header1">
+                <span class="collapse" href="#">[-]</span>
+                Test Case: User is able to Access the test site
+                <span class="status">
+                     | 
+                    <span class="failed">Failed</span>
+                </span>
+            </div>
+            <div class="box" id="test-step">
+                <div class="header2">
+                    <span class="collapse" href="#">[-]</span>
+                     Step: Navigate to Test Site app
+                    <span class="status">
+                         | 
+                        <span class="passed">Passed</span>
+                    </span>
+                </div>
+                <div class="line">
+                    <span width="100px">03/28/2025 11:08 AM</span>
+                     | 
+                    <b>
+                        <span class="passed">Passed</span>
+                    </b>
+                     | Navigate to https://www.balsamhill.com/
+                </div>
+            </div>
+            <div class="box" id="test-step">
+                <div class="header2">
+                    <span class="collapse" href="#">[-]</span>
+                     Step: Search for 'Christmas Tree' using the search bar
+                    <span class="status">
+                         | 
+                        <span class="passed">Passed</span>
+                    </span>
+                </div>
+                <div class="line">
+                    <span width="100px">03/28/2025 11:09 AM</span>
+                     | 
+                    <b>
+                        <span class="passed">Passed</span>
+                    </b>
+                     | [Christmas Tree] Wait for element to display (10)
+                </div>
+                <div class="line">
+                    <span width="100px">03/28/2025 11:09 AM</span>
+                     | 
+                    <b>
+                        <span class="passed">Passed</span>
+                    </b>
+                     | [Christmas Tree] Type "Christmas Tree"
+                </div>
+            </div>
+            <div class="box" id="test-step">
+                <div class="header2">
+                    <span class="collapse" href="#">[-]</span>
+                     Step: Select the third result that appears on the results page
+                    <span class="status">
+                         | 
+                        <span class="failed">Failed</span>
+                    </span>
+                </div>
+                <div class="line">
+                    <span width="100px">03/28/2025 11:09 AM</span>
+                     | 
+                    <b>
+                        <span class="failed">Failed</span>
+                    </b>
+                     | InvalidSelectorException : invalid selector: Unable to locate an element with the xpath expression (//span[@aria-label=' $399'])[1]] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//span[@aria-label=' $399'])[1]]' is not a valid XPath expression.
+  (Session info: chrome=134.0.6998.177)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
+System info: host: 'IQET-1330SMW-LX', ip: '192.168.1.6', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.177, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62119}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 002e94e69d76eebaaebca592bb868f2e
+*** Element info: {Using=xpath, value=(//span[@aria-label=' $399'])[1]]}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
